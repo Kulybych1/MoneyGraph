@@ -1,0 +1,110 @@
+.modal-backdrop {
+    opacity: 0.5;
+}
+
+.category-toggle-btn,
+.category-toggle-btn:hover {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.budget-summary-card:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.edit-btn,
+.edit-btn:hover {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.calendar-strip-container {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+}
+
+.date-cell {
+    flex: 0 0 60px;
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+    .date-cell:hover {
+        background-color: #f0f0f0;
+    }
+
+    .date-cell .day-of-week {
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+
+    .date-cell .day-number {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .date-cell.today {
+        border: 1px solid #0d6efd; /* Blue border for today */
+    }
+
+    .date-cell.selected {
+        background-color: #0d6efd; /* Blue background for selected */
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+.calendar-strip-container {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    -webkit-overflow-scrolling: touch;
+}
+
+    /* For Chrome, Safari, and Opera */
+    .calendar-strip-container::-webkit-scrollbar {
+        display: none;
+    }
+
+.date-cell {
+    flex: 0 0 60px; /* Prevents the cells from shrinking */
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+    .date-cell:hover {
+        background-color: #f0f0f0;
+    }
+
+    .date-cell .day-of-week {
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+
+    .date-cell .day-number {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .date-cell.today {
+        border: 1px solid #0d6efd;
+    }
+
+    .date-cell.selected {
+        background-color: #0d6efd;
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }

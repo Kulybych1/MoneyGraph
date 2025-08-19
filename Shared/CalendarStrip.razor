@@ -1,0 +1,9 @@
+﻿<div class="calendar-strip-container" @ref="_containerRef" id="@_containerId">
+    @foreach (var date in _dates)
+    {
+        <div class="@GetDateCellCss(date)" @onclick="() => SelectDate(date)" id="date-cell-@date.ToString("yyyy-MM-dd")">
+            <div class="day-of-week">@date.ToString("ddd")</div>
+            <div class="day-number">@date.Day</div>
+        </div>
+    }
+</div>

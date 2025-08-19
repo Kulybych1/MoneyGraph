@@ -19,7 +19,8 @@ jobs:
 
       # Installs the .NET SDK
       - name: Setup .NET
-        uses: actions/setup-net@v4
+        # This is the corrected line
+        uses: actions/setup-dotnet@v4
         with:
           # Your project is on .NET 9, which is a preview version. This tells the action to find it.
           dotnet-version: '9.0.x'

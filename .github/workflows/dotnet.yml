@@ -1,0 +1,34 @@
+# Name of your workflow
+name: Deploy Blazor Wasm to GitHub Pages
+
+# Run this workflow every time you push to the `main` branch
+on:
+  push:
+    branches: [ "main" ]
+
+# ADD THIS PERMISSIONS BLOCK
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          include-prerelease: true
+
+      - name: Publish .NET Project
+        run: dotnet publish PersonalAccountant.csproj --configuration Release --output build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/wwwroot

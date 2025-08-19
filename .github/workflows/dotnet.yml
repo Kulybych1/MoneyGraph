@@ -6,6 +6,10 @@ on:
   push:
     branches: [ "main" ]
 
+# ADD THIS PERMISSIONS BLOCK
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,7 +24,6 @@ jobs:
           dotnet-version: '9.0.x'
           include-prerelease: true
 
-      # This is the corrected line
       - name: Publish .NET Project
         run: dotnet publish PersonalAccountant.csproj --configuration Release --output build
 
